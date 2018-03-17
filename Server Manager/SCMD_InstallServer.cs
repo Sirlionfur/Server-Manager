@@ -38,7 +38,7 @@ namespace Server_Manager
                 var assemblyPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
 
                 Process cmd = new Process();
-                cmd.StartInfo.FileName = assemblyPath + "/steamcmd/steamcmd.exe";
+                cmd.StartInfo.FileName = assemblyPath + "\\steamcmd\\steamcmd.exe";
                 cmd.StartInfo.Arguments = "+login anonymous +force_install_dir " + selectedPath.Text + " +app_update " + appID.Text + " validate +quit";
                 cmd.Start();
 

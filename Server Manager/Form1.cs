@@ -685,16 +685,16 @@ namespace Server_Manager
         //Steam CMD > Update
         private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(selectedServer.getPath()))
+            try
             {
                 SCMD_UpdateServer updateServerDialog = new SCMD_UpdateServer(selectedServer.getPath());
                 updateServerDialog.Show();
-            } else
+            } catch(Exception ex)
             {
-                MessageBox.Show("No Path was passed to the Function!\nAre you sure you Selected a Valid Server?", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Are you sure you selected a Valid Server?\nError: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+
             }
-            
         }
 
         /* ========================================================= */
