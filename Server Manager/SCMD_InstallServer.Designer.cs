@@ -97,6 +97,8 @@
             this.Controls.Add(this.btnSelectPath);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAddServer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "SCMD_InstallServer";
             this.ResumeLayout(false);
             this.PerformLayout();

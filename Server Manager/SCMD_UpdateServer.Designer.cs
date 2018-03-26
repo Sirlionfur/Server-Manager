@@ -74,6 +74,8 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.appID);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "SCMD_UpdateServer";
             this.ResumeLayout(false);
             this.PerformLayout();
