@@ -70,6 +70,11 @@
     <Compile Include="NewServer.Designer.cs">
       <DependentUpon>NewServer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="SCMD_UpdateServer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +117,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Properties\strings.de-DE.resx" />
+    <EmbeddedResource Include="Properties\strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SCMD_InstallServer.resx">
       <DependentUpon>SCMD_InstallServer.cs</DependentUpon>
     </EmbeddedResource>
