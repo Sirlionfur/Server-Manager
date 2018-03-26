@@ -22,16 +22,23 @@ namespace Server_Manager
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            var assemblyPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            try
+            {
+                var assemblyPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
 
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = assemblyPath + "/steamcmd/steamcmd.exe";
-            cmd.StartInfo.Arguments = "+login anonymous +force_install_dir " + path + " +app_update " + appID.Text + " validate +quit";
-            cmd.Start();
+                Process cmd = new Process();
+                cmd.StartInfo.FileName = assemblyPath + "/steamcmd/steamcmd.exe";
+                cmd.StartInfo.Arguments = "+login anonymous +force_install_dir " + path + " +app_update " + appID.Text + " validate +quit";
+                cmd.Start();
 
-            MessageBox.Show("Closing the CMD Window could break your Installation!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Closing the CMD Window could break your Installation!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            this.Close();
+                this.Close();
+            } catch(Exception ex)
+            {
+                MessageBox.Show("An Unexpected Error Occured:\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void btnValveList_Click(object sender, EventArgs e)
